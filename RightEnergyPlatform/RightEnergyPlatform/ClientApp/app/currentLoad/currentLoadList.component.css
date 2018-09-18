@@ -1,0 +1,23 @@
+#mainPageButton{
+    border:solid blue 1px;
+}
+
+#updateButton {
+    border: solid orange 1px;
+    margin-right: 3px;
+}
+
+#flowTable{
+    color: black;
+}
+
+#flowTable > tr:nth-child(even) {
+    background-color: none;
+    color: black;
+}
+
+body .ui-datatable .ui-datatable-header, body .ui-datatable .ui-datatable-footer {
+    padding: .75em 1.25em;
+    background-color: #f5f5f5;
+    min-height: 60px;
+}

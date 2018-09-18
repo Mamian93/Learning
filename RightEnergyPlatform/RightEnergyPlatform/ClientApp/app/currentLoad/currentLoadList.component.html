@@ -1,0 +1,21 @@
+<div class="row">
+    <ng4-loading-spinner [loadingText]="'Please wait...'"> </ng4-loading-spinner>
+    <p-dataTable #dt [value]="loads" class="ui-g-12 table table-hover" id="flowTable" [reorderableColumns]="true" exportFilename="flows"
+                 [paginator]="true" [rows]="12" [rowsPerPageOptions]="[6,12,24]" [totalRecords]="recordCount" [pageLinks]="3">
+        <p-column field="time" header="Time" [sortable]="true">
+            <ng-template let-p="rowData" pTemplate="body">
+                {{ p.time | date:'short'}}
+            </ng-template>
+        </p-column>
+        <p-column field="ukFlowAmount" header="UK[MW]" [sortable]="true"></p-column>
+        <p-column field="irlFlowAmount" header="IRL[MW]" [sortable]="true"></p-column>
+        <p-column field="nirlFlowAmount" header="NIRL[MW]" [sortable]="true"></p-column>
+
+        <p-footer>
+            <a class="btn btn-warning pull-left" href="../../">Main Page</a>
+            <button type="button" pButton class="btn btn-info" (click)="dt.exportCSV()" style="float:right">
+                <i class="fa fa-table"></i> Export CSV file
+            </button>
+        </p-footer>
+    </p-dataTable>
+</div>

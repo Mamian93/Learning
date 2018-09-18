@@ -1,0 +1,31 @@
+
+<div class="row">
+    <ng4-loading-spinner [loadingText]="'Please wait...'"> </ng4-loading-spinner>
+    <div class="ui-g-12">
+        <p-panel header="Graph showing the whole flow amount" class="ui-g-12 ui-md-12">
+
+            <p-chart type="line" [data]="loadGraph"
+                     (onDataSelect)="onDataSelect($event)"></p-chart>
+
+        </p-panel>
+    </div>
+
+    <div class="ui-g-12">
+        <p-panel header="Graph showing the hourly price rate" class="ui-g-12 ui-md-12">
+
+            <button type="button" class="btn btn-success" (click)="myFunction()" style="margin-right:20px;">Irland</button>
+            <button type="button" class="btn btn-danger" (click)="showUKPrice()">UK</button>
+            <p-chart type="bar" [data]="priceGraph"></p-chart>
+
+        </p-panel>
+    </div>
+
+    <div class="ui-g-12">
+        <p-panel header="Graph showing the whole flow amount" class="ui-g-12 ui-md-12">
+
+            <p-chart type="bar" [data]="priceForecastGraph"
+                     (onDataSelect)="onDataSelect($event)"></p-chart>
+
+        </p-panel>
+    </div>
+</div>

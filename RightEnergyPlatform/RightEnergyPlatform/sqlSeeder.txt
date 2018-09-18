@@ -1,0 +1,41 @@
+﻿CREATE TABLE [dbo].[EnergyAmountFlows] (
+    [Id]      INT           IDENTITY (1, 1) NOT NULL,
+    [IRFlow]  INT           NOT NULL,
+    [ROIFlow] INT           NOT NULL,
+    [Time]    DATETIME2 (7) NOT NULL,
+    [UKFlow]  INT           NOT NULL,
+    CONSTRAINT [PK_EnergyAmountFlows] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[CountryIdList] (
+    [Id]      INT           IDENTITY (1, 1) NOT NULL,
+    [CountryId]  INT        NOT NULL,
+    [CountryName]    STRING		NOT NULL,
+    [UrlAddress]  STRING       NOT NULL,
+    CONSTRAINT [PK_CountryIdLists] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[PriceAmountFlows] (
+    [Id]      INT           IDENTITY (1, 1) NOT NULL,
+    [CountryId]  INT           NOT NULL,
+    [Time]    DATETIME2 (7) NOT NULL,
+    [Price]  DOUBLE           NOT NULL,
+    CONSTRAINT [PK_PriceAmountFlows] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[UrlAddressNames] (
+    [Id]   INT            IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR (MAX) NULL,
+    [Url]  NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_UrlAddressNames] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+INSERT INTO dbo.UrlAddressNames (CountryId, CountryName, Url) 
+VALUES ('1', 'UK', 'https://transparency.entsoe.eu/api?securityToken=b6678321-750f-4be7-b606-72e87787fd7b&documentType=A65&processType=A01&outBiddingZone_Domain=10YGB----------A&'),
+('2', 'IRL', 'https://transparency.entsoe.eu/api?securityToken=b6678321-750f-4be7-b606-72e87787fd7b&documentType=A65&processType=A01&outBiddingZone_Domain=10Y1001A1001A59C&'),
+('3', 'N-IRL','https://transparency.entsoe.eu/api?securityToken=b6678321-750f-4be7-b606-72e87787fd7b&documentType=A65&processType=A01&outBiddingZone_Domain=10Y1001A1001A016&');
+
+
+INSERT INTO dbo.CountryIdLists (CountryId, CountryName, UrlAddress)
+VALUES ('1','UK', 'https://transparency.entsoe.eu/api?securityToken=b6678321-750f-4be7-b606-72e87787fd7b&documentType=A44&in_Domain=10YGB----------A&out_Domain=10YGB----------A&'),
+('2' ,'IRL', 'https://transparency.entsoe.eu/api?securityToken=b6678321-750f-4be7-b606-72e87787fd7b&documentType=A44&in_Domain=10Y1001A1001A59C&out_Domain=10Y1001A1001A59C&');

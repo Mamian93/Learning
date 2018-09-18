@@ -1,0 +1,36 @@
+﻿@model RightEnergyPlatform.ViewModels.ManageUsersViewModel
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<h2>Manage Users from application database</h2>
+
+<div id="userTable">
+    <table class="table table-responsive table-striped table-hover">
+        <tr>
+            <th>User name</th>
+            <th>Email Address</th>
+            <th>Id</th>
+            <th>Modify User</th>
+        </tr>
+
+        @foreach (var item in Model.Users)
+        {
+        <tr>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td>@item.Id</td>
+            <td>
+                <button type="button" class="btn btn-danger">Delete User</button>
+                <a type="button" class="btn btn-success"
+                        asp-controller="ManageUser" asp-action="Edit"
+                        asp-route-id="@item.Id"
+                        style="margin-left:30px;">Edit User</a>
+            </td>
+        </tr>
+        }
+
+    </table>
+    
+</div>
+

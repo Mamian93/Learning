@@ -17,7 +17,7 @@ namespace RightEnergyPlatform.ViewModels
         [Required]
         public string Subject { get; set; }
         [Required]
-        [MaxLength(250, ErrorMessage = "Too Long")]
+        [MaxLength(250, ErrorMessage = "Tooo Long")]
         public string Message { get; set; }
     }
 }

@@ -6,6 +6,7 @@ namespace RightEnergyPlatform.ViewModels
     {
 
         [Required]
+        [MaxLength(250)]
         [Display(Name = "User Name")]
         public string UserName { get; set; }
 

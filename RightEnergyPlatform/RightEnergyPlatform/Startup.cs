@@ -61,7 +61,7 @@ namespace RightEnergyPlatform
                 //.AddJwtBearer()
                 .AddJwtBearer(cfg =>
                 {
-                    cfg.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    cfg.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidIssuer = _config["Tokens:Issuer"],
                         ValidAudience = _config["Tokens:Audience"],

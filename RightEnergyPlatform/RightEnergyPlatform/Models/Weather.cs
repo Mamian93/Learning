@@ -12,7 +12,7 @@ namespace RightEnergyPlatform.Models
         public int Snow { get; set; }
         public int Hail { get; set; }
 
-        public void CalculateRainDays(string days) { }
+        public void CalculateRainDays(string days, DateTime date) { }
         public void CalculateSunnyDays(int days, int hours) { }
         
     }

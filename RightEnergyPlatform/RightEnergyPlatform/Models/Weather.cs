@@ -11,5 +11,6 @@ namespace RightEnergyPlatform.Models
         public int SunnyDays { get; set; }
 
         public void CalculateRainDays(int days) { }
+        public void CalculateSunnyDays(int days) { }
     }
 }
